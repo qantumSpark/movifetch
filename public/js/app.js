@@ -1,7 +1,7 @@
 import * as api from '/js/api.js';
 
-let API_KEY;
-let searchURL = api.getSearchMovieURL()
+let searchURL = api.searchURL()
+console.log(searchURL);
 
 const searchInput = document.querySelector('#appInput')
 const searchBtn = document.querySelector('#searchBtn')
