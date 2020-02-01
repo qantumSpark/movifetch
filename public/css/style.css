@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css?family=Anton|Lato&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --prim: #e06672;
+  --sec: #f8b19548;
+  --light: #fff4f0;
+  --dark: #6c5b7b;
+  --shadow:#2a233028;
+  --green: #52de97;
+}
+
+body {
+  background-color: var(--light);
+  font-family: "Lato", sans-serif;
+}
+.--hidden{
+  display: none!important;
+}
+
+/* ====================================================== */
+
+/* ====================================================== */
+
+header{
+  height: 12vh;
+  width: 100%;
+  background-color: var(--prim);
+  color: var(--dark);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid var(--dark);
+}
+.header__title{
+  font-size: 24px;
+  font-family: 'Anton';
+  position: relative;
+}
+.header__title::before{
+  content: "";
+  height: 2px;
+  width: 120px;
+  background-color: var(--dark);
+  z-index: 10;
+  position: absolute;
+  bottom: 3px;
+  left: -10px;
+}
+.header__title::after{
+  content: "";
+  height: 40px;
+  width: 2px;
+  background-color: var(--dark);
+  z-index: 10;
+  position: absolute;
+  bottom: -5px;
+  left: -5px;
+}
+.header__title i,span{
+  color: var(--green);
+}
+
+/* ====================================================== */
+
+/* ====================================================== */
+.app{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 20px;
+}
+
+.app__home{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.app__home__form {
+  display: flex;
+  margin-bottom: 20px;
+}
+.app__home__input{
+  background-color: transparent;
+  border:none;
+  border-bottom: 1px solid var(--dark);
+  box-shadow: none;
+  color: var(--dark);
+  font-family: "Lato";
+}
+.app__home__form i {
+  color: var(--green);
+}
+
+/* ====================================================== */
+
+/* ====================================================== */
+
+.app__home__results{
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.app__home__result{
+  padding: 10px;
+  margin-bottom: 16px;
+  box-shadow: 0 0 5px var(--shadow);
+  border-left: 5px solid transparent ;
+  border-radius: 5px;
+  opacity: .8;
+  transition: .2s ease-in;
+  position: relative;
+}
+.app__home__result:hover{
+  opacity: 1;
+  border-left: 5px solid var(--green) ;
+
+}
+.app__home__result img{
+  float: left;
+  height: 50px;
+  width: 50px;
+  margin-right: 10px;
+}
+.app__home__result .result__title{}
+.app__home__result .result__description{
+  font-size: 12px;
+}
