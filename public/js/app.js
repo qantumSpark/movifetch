@@ -1,24 +1,33 @@
-import * as api from '/js/api.js';
+import * as api from "/js/api.js";
+import * as dom from "/js/dom.js";
 
-let searchURL = api.searchURL()
-console.log(searchURL);
+//Recherche de films
+api.searchURL(res => {
+  dom.search(res, 1, (url, res) => {
+    api.getMany(url, res => {
+      let list = res.data.results.sort((a, b) => a.popularity < b.popularity);
 
-const searchInput = document.querySelector('#appInput')
-const searchBtn = document.querySelector('#searchBtn')
+      
+      dom.appendFilms(list);
+      dom.awaitSelection(id => {
+        api.getOneUrl(id, film => {          
+          dom.showSelectFilm(film);
+        })
+      })
 
-searchInput.addEventListener("keydown", function(e){
-  if(e.keyCode === 13){
-    let search = this.value
-    let page = 1
-    let url = searchURL +page+ "include_adult=false"
-    console.log(url);
-    
-    // axios.get(searchURL +page+ "include_adult=false")
-    //   .then((result) => {
-    //     console.log(result)
-    //   }).catch((err) => {
-    //     console.log(err)
-    //   });
-  }
-})
+
+      dom.scrollWatcher(url,(query, pageString)=>{
+        api.getMore(query, pageString, res => {
+          dom.appendFilms(res);
+          
+        })
+      })
+    });
+  });
+});
+
+// Select a single film
+
+
+
 
