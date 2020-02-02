@@ -92,7 +92,8 @@ header{
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin: 20px;
+  margin: 20px auto;
+  padding: 0 20px;
 }
 
 .app__home{
@@ -160,4 +161,76 @@ header{
 }
 .app__home__result .result__description{
   font-size: 12px;
+}
+
+/* 
+================================================
+*/
+
+.app__film{
+  text-align: center;
+  width: 100%;
+  background-color: #aaa;
+
+}
+.app__film .film__title{
+  font-family: 'Anton';
+  color: var(--dark);
+  font-size: 1.5rem;
+  display: block;
+  text-align: left;
+
+}
+.app__film .film__popularity{
+  display: block;
+  text-align: right;
+  color: var(--green);
+  margin-bottom: 20px;
+}
+.app__film img{
+  width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 600px){
+  .app{
+    padding: 0 20px;
+    max-width: 750px;
+  }
+  .app__home__input{
+    width: 500px;
+    font-size: 2rem;
+    text-align: center;
+  }
+  .app__home__form i{
+    font-size: 2rem;
+  }
+  .header__title{
+    font-size: 48px;
+    font-family: 'Anton';
+    position: relative;
+  }
+ 
+  .header__title::before{
+    content: "";
+    height: 3px;
+    width: 240px;
+    background-color: var(--dark);
+    z-index: 10;
+    position: absolute;
+    bottom: 3px;
+    left: -20px;
+  }
+  .header__title::after{
+    content: "";
+    height: 80px;
+    width: 3px;
+    background-color: var(--dark);
+    z-index: 10;
+    position: absolute;
+    bottom: -5px;
+    left: -12px;
+  }
 }
