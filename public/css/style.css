@@ -5,48 +5,52 @@
   margin: 0;
   box-sizing: border-box;
 }
-a, a:hover, a:active, a:visited{
+a,
+a:hover,
+a:active,
+a:visited {
   text-decoration: none;
-  color: var(--dark)
+  color: var(--dark);
 }
 :root {
   --prim: #e06672;
   --sec: #f8b19548;
   --light: #fff4f0;
   --dark: #6c5b7b;
-  --shadow:#2a233028;
+  --shadow: #2a233028;
   --green: #52de97;
 }
-html{scroll-behavior: smooth;}
-
+html {
+  scroll-behavior: smooth;
+}
 body {
-  
   background-color: var(--light);
   font-family: "Lato", sans-serif;
 }
-.--hidden{
-  display: none!important;
+.--hidden {
+  display: none !important;
 }
 .app__widget {
-  position:fixed;
-  bottom:10px;
+  position: fixed;
+  bottom: 10px;
   right: 10px;
   padding: 5px;
   border-radius: 10px;
   background-color: var(--shadow);
   border: 1px solid var(--dark);
-  color: var(--dark)!important;
+  color: var(--dark) !important;
   opacity: 0;
   transition: opacity 1s ease;
 }
-.app__widget:hover{
+.app__widget:hover {
   color: var(--green);
 }
-/* ====================================================== */
 
 /* ====================================================== */
 
-header{
+/* ====================================================== */
+
+header {
   height: 12vh;
   width: 100%;
   background-color: var(--prim);
@@ -56,12 +60,12 @@ header{
   align-items: center;
   border-bottom: 1px solid var(--dark);
 }
-.header__title{
+.header__title {
   font-size: 24px;
-  font-family: 'Anton';
+  font-family: "Anton";
   position: relative;
 }
-.header__title::before{
+.header__title::before {
   content: "";
   height: 2px;
   width: 120px;
@@ -71,7 +75,7 @@ header{
   bottom: 3px;
   left: -14px;
 }
-.header__title::after{
+.header__title::after {
   content: "";
   height: 40px;
   width: 2px;
@@ -81,22 +85,23 @@ header{
   bottom: -5px;
   left: -5px;
 }
-.header__title i,span{
+.header__title i,
+span {
   color: var(--green);
 }
 
 /* ====================================================== */
 
 /* ====================================================== */
-.app{
+
+.app {
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin: 20px auto;
   padding: 0 20px;
 }
-
-.app__home{
+.app__home {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,15 +111,18 @@ header{
   display: flex;
   margin-bottom: 20px;
 }
-.app__home__input{
+.app__home__input {
+  width: 250px;
+  font-size: 1.5rem;
   background-color: transparent;
-  border:none;
+  border: none;
   border-bottom: 1px solid var(--dark);
   box-shadow: none;
   color: var(--dark);
   font-family: "Lato";
 }
 .app__home__form i {
+  font-size: 1.5rem;
   color: var(--green);
   cursor: pointer;
 }
@@ -123,43 +131,41 @@ header{
 
 /* ====================================================== */
 
-.app__home__results{
+.app__home__results {
   width: 100%;
   max-width: 600px;
   display: flex;
   justify-content: center;
   flex-direction: column;
 }
-.app__home__result{
+.app__home__result {
   padding: 10px;
   margin-bottom: 16px;
   box-shadow: 0 0 5px var(--shadow);
-  border-left: 5px solid transparent ;
+  border-left: 5px solid transparent;
   border-radius: 5px;
-  opacity: .8;
-  transition: .2s ease-in;
+  opacity: 0.8;
+  transition: 0.2s ease-in;
   position: relative;
   cursor: pointer;
 }
-.app__home__result:hover{
+.app__home__result:hover {
   opacity: 1;
-  border-left: 5px solid var(--green) ;
-
+  border-left: 5px solid var(--green);
 }
-.app__home__result img{
+.app__home__result img {
   float: left;
   height: 150px;
-  
+
   margin-right: 10px;
 }
-.app__home__result .result__title{
+.app__home__result .result__title {
   margin-bottom: 10px;
-  font-family:'Anton';
+  font-family: "Anton";
   font-weight: light;
   color: var(--dark);
-  
 }
-.app__home__result .result__description{
+.app__home__result .result__description {
   font-size: 12px;
 }
 
@@ -167,53 +173,75 @@ header{
 ================================================
 */
 
-.app__film{
+.app__film__details {
   text-align: center;
   width: 100%;
-  background-color: #aaa;
-
+  margin-top: 20px;
+  position: relative;
 }
-.app__film .film__title{
-  font-family: 'Anton';
+.app__film__goback {
+  cursor: pointer;
+  color: var(--green);
+  position: absolute;
+  top: -20px;
+  left: 0;
+  z-index: 10;
+  opacity: 0.8;
+}
+.app__film__goback:hover {
+  opacity: 1;
+}
+.app__film__details .film__title {
+  font-family: "Anton";
   color: var(--dark);
   font-size: 1.5rem;
   display: block;
   text-align: left;
-
 }
-.app__film .film__popularity{
+.app__film__details .film__popularity {
   display: block;
   text-align: right;
   color: var(--green);
   margin-bottom: 20px;
 }
-.app__film img{
-  width: 100%;
+.app__film__details img {
+  max-width: 100%;
+  border-radius: 5px;
+  border: 1px solid var(--green);
+  margin-bottom: 20px;
+}
+.film__year {
+  text-align: left;
+}
+.film__status {
+  text-align: right;
+  padding-bottom: 20px;
+}
+.film__description {
+  padding-top: 20px;
+  border-top: 1px solid var(--dark);
 }
 
-
-
-
-@media screen and (min-width: 600px){
-  .app{
+@media screen and (min-width: 600px) {
+  .app {
     padding: 0 20px;
     max-width: 750px;
   }
-  .app__home__input{
+  .app__home__input {
     width: 500px;
     font-size: 2rem;
     text-align: center;
   }
-  .app__home__form i{
+  .app__home__form i {
     font-size: 2rem;
   }
-  .header__title{
+  .header__title {
     font-size: 48px;
-    font-family: 'Anton';
+    font-family: "Anton";
     position: relative;
   }
- 
-  .header__title::before{
+
+  .header__title::before {
     content: "";
     height: 3px;
     width: 240px;
@@ -223,7 +251,7 @@ header{
     bottom: 3px;
     left: -20px;
   }
-  .header__title::after{
+  .header__title::after {
     content: "";
     height: 80px;
     width: 3px;
